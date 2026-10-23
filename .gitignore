@@ -1,0 +1,12 @@
+# Local database credentials (copy db.example.php to db.php)
+db.php
+
+# User-uploaded images are generated at runtime
+uploads/*
+!uploads/.htaccess
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

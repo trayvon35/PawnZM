@@ -1,0 +1,7 @@
+# Deny everything by default, then allow only image files to be served.
+Options -Indexes -ExecCGI
+
+Require all denied
+<FilesMatch "\.(jpe?g|png|webp)$">
+    Require all granted
+</FilesMatch>
