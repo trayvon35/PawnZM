@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawnZM - Discover. Connect. Buy & Sell.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Icon sprite (Lucide, ISC licence) -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+        <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+        <symbol id="i-shopping-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+        <symbol id="i-smartphone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
+        <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+        <symbol id="i-shopping-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+        <symbol id="i-shirt" viewBox="0 0 24 24"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></symbol>
+        <symbol id="i-sofa" viewBox="0 0 24 24"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z"/><path d="M4 18v2"/><path d="M20 18v2"/></symbol>
+        <symbol id="i-watch" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><polyline points="12 10 12 12 13 13"/><path d="m16.13 7.66-.81-4.05a2 2 0 0 0-2-1.61h-2.68a2 2 0 0 0-2 1.61l-.78 4.05"/><path d="m7.88 16.36.8 4a2 2 0 0 0 2 1.64h2.72a2 2 0 0 0 2-1.64l.8-4"/></symbol>
+        <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+        <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+        <symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></symbol>
+        <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></symbol>
+        <symbol id="i-twitter" viewBox="0 0 24 24"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></symbol>
+        <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></symbol>
+    </svg>
+
+    <!-- Top Navigation Header -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#" class="logo-link">
+                    <img src="logo-wordmark.png" alt="pawnzm" class="logo-img">
+                </a>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for anything...">
+                    <button class="search-btn" aria-label="Search"><svg class="icon"><use href="#i-search"/></svg></button>
+                </div>
+            </div>
+            <div class="nav-right">
+                <button class="btn btn-login" id="open-login-btn">Login</button>
+                <div class="cart-icon" id="cart-btn" aria-label="Cart">
+                    <svg class="icon"><use href="#i-shopping-cart"/></svg> <span class="badge">2</span>
+                </div>
+                <button class="menu-btn" id="open-modal-btn">+ Sell Item</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub-header Location Bar -->
+    <div class="location-bar">
+        <div class="location-container">
+            <span class="pin-icon"><svg class="icon"><use href="#i-map-pin"/></svg></span>
+            <span class="loc-label">Your location:</span>
+            <select id="location-select">
+                <option value="Lusaka, ZM">Lusaka, ZM</option>
+                <option value="Kitwe, ZM">Kitwe, ZM</option>
+                <option value="Ndola, ZM">Ndola, ZM</option>
+                <option value="Livingstone, ZM">Livingstone, ZM</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="main-wrapper">
+        
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+            <div class="hero-text">
+                <h1>Discover. Connect.<br>Buy & Sell.</h1>
+                <p>Find amazing products near you and connect with trusted local sellers.</p>
+                <button class="btn btn-hero" id="explore-btn">Explore Products</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop" alt="Group of friends buying and selling">
+            </div>
+        </section>
+
+        <!-- Categories Bar -->
+        <section class="categories-section">
+            <div class="categories-grid" id="category-list">
+                <div class="category-card active" data-category="all">
+                    <div class="cat-icon"><svg class="icon"><use href="#i-globe"/></svg></div>
+                    <span>All Products</span>
+                </div>
+                <div class="category-card" data-category="electronics">
+                    <div class="cat-icon"><svg class="icon"><use href="#i-smartphone"/></svg></div>
+                    <span>Electronics</span>
+                </div>
+                <div class="category-card" data-category="vehicles">
+                    <div class="cat-icon"><svg class="icon"><use href="#i-car"/></svg></div>
+                    <span>Vehicles</span>
+                </div>
+                <div class="category-card" data-category="thrift">
+                    <div class="cat-icon"><svg class="icon"><use href="#i-shopping-bag"/></svg></div>
+                    <span>Thrift</span>
+                </div>
+                <div class="category-card" data-category="fashion">
+                    <div class="cat-icon"><svg class="icon"><use href="#i-shirt"/></svg></div>
+                    <span>Fashion</span>
+                </div>
+                <div class="category-card" data-category="furniture">
+                    <div class="cat-icon"><svg class="icon"><use href="#i-sofa"/></svg></div>
+                    <span>Home & Garden</span>
+                </div>
+                <div class="category-card" data-category="collectibles">
+                    <div class="cat-icon"><svg class="icon"><use href="#i-watch"/></svg></div>
+                    <span>Collectibles</span>
+                </div>
+                <div class="category-card" data-category="industrial">
+                    <div class="cat-icon"><svg class="icon"><use href="#i-truck"/></svg></div>
+                    <span>Business & Industrial</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Propositions Strip -->
+        <section class="value-props">
+            <div class="prop-item">
+                <div class="prop-icon"><svg class="icon"><use href="#i-shield-check"/></svg></div>
+                <div>
+                    <h4>Safe & Secure</h4>
+                    <p>Verified sellers and secure transactions</p>
+                </div>
+            </div>
+            <div class="prop-item">
+                <div class="prop-icon"><svg class="icon"><use href="#i-tag"/></svg></div>
+                <div>
+                    <h4>Best Prices</h4>
+                    <p>Compare offers and find great deals</p>
+                </div>
+            </div>
+            <div class="prop-item">
+                <div class="prop-icon"><svg class="icon"><use href="#i-map-pin"/></svg></div>
+                <div>
+                    <h4>Local & Easy</h4>
+                    <p>Connect with sellers in your area</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Header -->
+        <section class="feed-header">
+            <h2 id="feed-title">Featured Products</h2>
+            <a href="#" class="view-all" id="view-all-btn">View all &rarr;</a>
+        </section>
+
+        <!-- Product Grid -->
+        <section class="product-grid" id="product-grid">
+            <!-- Dynamic JavaScript cards render here -->
+        </section>
+
+        <!-- Call To Action Banner -->
+        <section class="cta-banner">
+            <div class="cta-left">
+                <div class="avatar-group">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop" alt="User">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop" alt="User">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop" alt="User">
+                </div>
+                <div class="cta-text">
+                    <h3>Join 50,000+ buyers</h3>
+                    <p>in your area</p>
+                </div>
+            </div>
+            <button class="btn btn-hero">Join Now</button>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <a href="#" class="logo-link">
+                    <img src="logo.png" alt="pawnzm" class="logo-img footer-logo-img">
+                </a>
+                <p>Your trusted local marketplace to buy, sell and connect with your community.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Website"><svg class="icon"><use href="#i-globe"/></svg></a>
+                    <a href="#" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"/></svg></a>
+                    <a href="#" aria-label="Twitter"><svg class="icon"><use href="#i-twitter"/></svg></a>
+                    <a href="#" aria-label="YouTube"><svg class="icon"><use href="#i-youtube"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Make Money</h4>
+                <ul>
+                    <li><a href="#">Sell Products</a></li>
+                    <li><a href="#">Become a Seller</a></li>
+                    <li><a href="#">Affiliate Program</a></li>
+                    <li><a href="#">Refer & Earn</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Safety Guidelines</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+                <div class="app-badges">
+                    <button class="app-btn"><svg class="icon"><use href="#i-smartphone"/></svg> App Store</button>
+                    <button class="app-btn"><svg class="icon"><use href="#i-smartphone"/></svg> Google Play</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Create Listing Modal -->
+    <div class="modal-overlay hidden" id="listing-modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Post a Product on PawnZM</h3>
+                <button class="close-btn" id="close-modal-btn">&times;</button>
+            </div>
+            <form id="create-listing-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="item-title">Title</label>
+                    <input type="text" id="item-title" name="title" placeholder="e.g. Vintage Leather Jacket" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="item-price">Price (ZMW)</label>
+                        <input type="number" id="item-price" name="price" placeholder="e.g. 1500" min="0" step="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="item-category">Category</label>
+                        <select id="item-category" name="category" required>
+                            <option value="electronics">Electronics</option>
+                            <option value="vehicles">Vehicles</option>
+                            <option value="thrift">Thrift</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="furniture">Home & Garden</option>
+                            <option value="collectibles">Collectibles</option>
+                            <option value="industrial">Business & Industrial</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="seller-name">Seller / Store Name</label>
+                        <input type="text" id="seller-name" name="seller" placeholder="e.g. ThriftKings" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="item-location">Location</label>
+                        <input type="text" id="item-location" name="location" placeholder="e.g. Lusaka, Central" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="seller-contact">Contact Phone or Email</label>
+                    <input type="text" id="seller-contact" name="contact" placeholder="e.g. +260 97 1234567" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="item-desc">Product Description</label>
+                    <textarea id="item-desc" name="description" rows="3" placeholder="Describe condition, specs, etc."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="item-image-file">Product Image</label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="item-image-file" name="image" accept="image/*" required>
+                        <div class="file-upload-preview hidden" id="file-preview-container">
+                            <img id="file-preview" src="" alt="Preview">
+                            <span class="file-name" id="file-name"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-modal-btn">Cancel</button>
+                    <button type="submit" class="btn btn-hero">Publish Listing</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div class="modal-overlay hidden" id="detail-modal">
+        <div class="modal-card detail-modal-card">
+            <button class="close-btn detail-close-btn" id="close-detail-modal-btn">&times;</button>
+            <div class="detail-modal-body" id="detail-modal-content">
+                <!-- Injected dynamically via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
